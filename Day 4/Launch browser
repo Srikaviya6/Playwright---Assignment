@@ -1,0 +1,31 @@
+import { chromium, firefox,test} from "@playwright/test"
+test("Learn to Launch a Browser", async()=>{
+
+    //Launch firefox and edge browser
+const browser1 = await firefox.launch({headless:false,channel:"firefox"})
+const browser2 = await chromium.launch({headless:false,channel:"chrome"})
+
+//Load Flipkart in firefox browser
+const context1 = await browser1.newContext() 
+const page1 = await context1.newPage()
+await page1.goto("https://www.flipkart.com");
+
+//Get the url and title
+const urlOfFlipkart = page1.url();
+console.log(urlOfFlipkart);
+const titleOfFlipkart = await page1.title()
+console.log(titleOfFlipkart);
+
+//Load RedBus in Edge browser
+const context2 = await browser2.newContext() 
+const page2 = await context2.newPage()
+await page2.goto("https://www.redbus.in");
+
+//Get the url and title
+const urlOfRedbus = page2.url();
+console.log(urlOfRedbus);
+const titleOfRedbus = await page2.title()
+console.log(titleOfRedbus);
+
+} )
+    
