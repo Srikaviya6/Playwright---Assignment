@@ -1,0 +1,25 @@
+function reverseString() {
+    origString = "MADAM"
+    splitString = origString.split("")
+    revString = ""
+
+    for (let index = splitString.length-1; index >=0; index--) {
+        revString += splitString[index]
+
+    }
+          console.log(revString);
+          
+}
+
+function checkPalindrome() {
+    if(origString === revString) {
+        console.log("True");
+        
+    }
+    else { 
+        console.log("False");
+        
+    }
+}
+reverseString()
+checkPalindrome()
