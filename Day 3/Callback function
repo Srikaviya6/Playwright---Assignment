@@ -1,0 +1,19 @@
+
+//Declare a global variable
+let browser = "Chrome"
+
+//Create a function named checkBrowserVersion that accepts a callback function as an argument
+function checkBrowserVersion(callBack) {
+   
+//Use setTimeout to simulate a delay (like waiting for data from a server)
+//Invoke the callback function and pass the browser value to it.   
+ setTimeout(() => {callBack(browser) }, 2000);   
+
+}
+
+function logBrowserVersion(browserName) {
+    console.log("Browser version using callback: "+ browserName);
+}
+
+checkBrowserVersion(logBrowserVersion)  
+
